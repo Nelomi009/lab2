@@ -12,36 +12,42 @@ using namespace std;
 int main() {
   double temperature;
   double pressure;
+  double threeDecimalPlaces;
+  double temperatureUpToNineHundred;
+  double temperatureUpToAThousand;
+  double increaseTheTemperatureByOneHundred;
+  double increaseTemperatureByFifty;
     
-  temperature = 600;
+  temperature = 600.0;
+  threeDecimalPlaces = 3.0;
+  temperatureUpToNineHundred = 900.0;
+  increaseTheTemperatureByOneHundred = 100.0;
+  temperatureUpToAThousand = 1100.0;
+  increaseTemperatureByFifty = 50.0;
 
-  //от 600 до 900 мы прибовляем по  услвию 100 по задачи 
-  while (temperature <= 900 ) {
-    pressure = pow(10.0, ((-8920.0 / (temperature + 273)) + 7.54));
+  while (temperature <=  temperatureUpToNineHundred ) {
+    pressure = pow(10.0, ((-8920.0 / (temperature + 273.0)) + 7.54));
         
-    cout << fixed; cout.precision(3);
+    cout << fixed; cout.precision(threeDecimalPlaces);
     cout << "T= " << temperature;
     cout << "\t\P= " << pressure <<endl; 
 
-    //от 600 до 900 мы прибовляем по  услвию 100 по задачи 
-    temperature += 100;
+    temperature += increaseTheTemperatureByOneHundred;
   }
 
   do { 
-    pressure = pow(10, ((-8920.0 / (temperature + 273)) + 7.54));
+    pressure = pow(10, ((-8920.0 / (temperature + 273.0)) + 7.54));
         
     cout << fixed;
-    //в ответе нужно 3 знака после запятой
-    cout.precision(3);
+    cout.precision(threeDecimalPlaces);
     cout << "T= " << temperature;
     cout <<"\t\P = " << pressure<<endl;
+ 
+    temperature += increaseTemperatureByFifty;
 
-    //от 1000 до 1100  мы прибовляем по 50  услвию по задачи 
-    temperature += 50;
-
-    //от 1000 до 1100  мы прибовляем по  услвию 50 по задачи 
-    } while (temperature <= 1100);
+    } while (temperature <= temperatureUpToAThousand);
     
   return 0;
 }
+
 
